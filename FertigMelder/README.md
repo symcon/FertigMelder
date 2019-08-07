@@ -26,8 +26,9 @@ Wird dieser Grenzwert unterschritten und in einer einstellbaren Zeitspanne nicht
 
 ### 3. Software-Installation
 
-Über das Modul-Control folgende URL hinzufügen.  
-`git://github.com/symcon/SymconMisc.git`  
+* Über den Modul Store das Modul Fertig-Melder installieren.
+* Alternativ über das Modul Control folgende URL hinzufügen:
+´https://github.com/symcon/FertigMelder`  
 
 ### 4. Einrichten der Instanzen in IP-Symcon
 
