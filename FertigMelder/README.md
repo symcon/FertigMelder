@@ -1,7 +1,6 @@
 # FertigMelder
 Der FertigMelder meldet ob ein Gerät fertig ist.
-Dazu wird die Variable der Leistungsaufnahme des Geräts ausgewählt und ein Grenzwert festgelegt.
-Wird dieser Grenzwert unterschritten und in einer einstellbaren Zeitspanne nicht wieder überschritten, wird die Statusvariable auf "Fertig" gesetzt. 
+Dazu wird die Variable der Leistungsaufnahme des Geräts ausgewählt und ein Grenzwert festgelegt. Sobald dieser Grenzwert erstmalig überschritten wird, wird der FertigMelder gestartet. Wird dieser Grenzwert unterschritten und in einer einstellbaren Zeitspanne nicht wieder überschritten, wird die Statusvariable auf "Fertig" gesetzt. 
 
 ### Inhaltverzeichnis
 
