@@ -11,7 +11,7 @@ class FertigMelder extends IPSModule {
 		$this->RegisterPropertyFloat("BorderValue", 0);
 		
 		//Timer
-		$this->RegisterTimer("CheckIfDoneTimer", 0, 'FM_NewDone($_IPS[\'TARGET\']);');
+		$this->RegisterTimer("CheckIfDoneTimer", 0, 'FM_Done($_IPS[\'TARGET\']);');
 		
 		if (!IPS_VariableProfileExists("FM.Status")) {
 			IPS_CreateVariableProfile("FM.Status", 1);
@@ -37,6 +37,17 @@ class FertigMelder extends IPSModule {
 		//Never delete this line!
 		parent::ApplyChanges();
 		
+		//Deleting outdated events
+		$eventID = @$this->GetIDForIdent("EventUp");
+		if ($eventID) {
+			IPS_DeleteEvent($eventID);
+		}
+
+		$eventID = @$this->GetIDForIdent("EventDown");
+		if ($eventID) {
+			IPS_DeleteEvent($eventID);
+		}
+
 		$this->RegisterMessage($this->ReadPropertyInteger("SourceID"), VM_UPDATE);
 	
 	}
@@ -56,7 +67,7 @@ class FertigMelder extends IPSModule {
 			if (GetValue($this->ReadPropertyInteger("SourceID")) >= $this->ReadPropertyFloat("BorderValue")) {
 				SetValue($this->GetIDForIdent("Status"), 1);
 			} else {
-				SetValue($this->GetIDForIdent("Status"), 2);
+				SetValue($this->GetIDForIdent("Status"), 0);
 			}
 		} else {
 			SetValue($this->GetIDForIdent("Status"), 0);
@@ -81,19 +92,18 @@ class FertigMelder extends IPSModule {
 
 	public function MessageSink($TimeStamp, $SenderID, $Message, $Data)
 	{
-        if (GetValue(GetIDForIdent("Status"))) {
-            if (($Data[0] < $this->ReadPropertyFloat("BorderValue")) && (GetValue(GetIDForIdent("Status") == 1))) {
-                $this->SendDebug("Status", "BorderReached", 0);
+        if (GetValue($this->GetIDForIdent("Active"))) {
+            if (($Data[0] < $this->ReadPropertyFloat("BorderValue")) && ((GetValue($this->GetIDForIdent("Status")) == 1))) {
                 $this->SetTimerInterval("CheckIfDoneTimer", $this->ReadPropertyInteger("Period") * 1000);
-            } else {
-                SetValue($this->GetIDForIdent("Status"), 1);
+            } elseif ($Data[0] > $this->ReadPropertyFloat("BorderValue")) {
+				SetValue($this->GetIDForIdent("Status"), 1);
+				$this->SetTimerInterval("CheckIfDoneTimer", 0);
             }
         }
 	}
 
-	public function NewDone()
+	public function Done()
 	{
-		$this->SendDebug("Done", "Ready", 0);
 		SetValue($this->GetIDForIdent("Status"), 2);
 		$this->SetTimerInterval("CheckIfDoneTimer", 0);
 	}
