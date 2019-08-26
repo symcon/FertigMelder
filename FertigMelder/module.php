@@ -94,10 +94,14 @@ class FertigMelder extends IPSModule {
 	{
         if (GetValue($this->GetIDForIdent("Active"))) {
             if (($Data[0] < $this->ReadPropertyFloat("BorderValue")) && ((GetValue($this->GetIDForIdent("Status")) == 1))) {
-                $this->SetTimerInterval("CheckIfDoneTimer", $this->ReadPropertyInteger("Period") * 1000);
+				if ($this->GetBuffer("StatusBuffer") == "Running") {
+					$this->SetTimerInterval("CheckIfDoneTimer", $this->ReadPropertyInteger("Period") * 1000);
+					$this->SetBuffer("StatusBuffer", "Done");
+				}
             } elseif ($Data[0] > $this->ReadPropertyFloat("BorderValue")) {
 				SetValue($this->GetIDForIdent("Status"), 1);
 				$this->SetTimerInterval("CheckIfDoneTimer", 0);
+				$this->SetBuffer("StatusBuffer", "Running");
             }
         }
 	}
