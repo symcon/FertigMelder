@@ -6,7 +6,10 @@
 			"Bordervalue which forces a reaction.": "Grenzwert bei dessen Unterschreitung reagiert werden soll.",
 			"Bordervalue": "Grenzwert",
 			"Elapsing-Time til 'Done'-Message": "Ablaufzeit bis 'Fertigmeldung'",
-			"Seconds": "Sekunden"
+			"Seconds": "Sekunden",
+			"Off": "Aus",
+			"Running": "Läuft",
+			"Done": "Fertig"
 		}
 	}
 }
