@@ -66,6 +66,7 @@ class FertigMelder extends IPSModule {
 		if ($Active) {
 			if (GetValue($this->ReadPropertyInteger("SourceID")) >= $this->ReadPropertyFloat("BorderValue")) {
 				SetValue($this->GetIDForIdent("Status"), 1);
+				$this->SetBuffer("StatusBuffer", "Running");
 			} else {
 				SetValue($this->GetIDForIdent("Status"), 0);
 			}
@@ -93,11 +94,10 @@ class FertigMelder extends IPSModule {
 	public function MessageSink($TimeStamp, $SenderID, $Message, $Data)
 	{
         if (GetValue($this->GetIDForIdent("Active"))) {
-            if (($Data[0] < $this->ReadPropertyFloat("BorderValue")) && ((GetValue($this->GetIDForIdent("Status")) == 1))) {
-				if ($this->GetBuffer("StatusBuffer") == "Running") {
-					$this->SetTimerInterval("CheckIfDoneTimer", $this->ReadPropertyInteger("Period") * 1000);
-					$this->SetBuffer("StatusBuffer", "Done");
-				}
+            if (($Data[0] < $this->ReadPropertyFloat("BorderValue")) && (GetValue($this->GetIDForIdent("Status")) == 1) && ($this->GetBuffer("StatusBuffer") == "Running")) {
+				$this->SetTimerInterval("CheckIfDoneTimer", $this->ReadPropertyInteger("Period") * 1000);
+				$this->SetBuffer("StatusBuffer", "Done");
+				
             } elseif ($Data[0] > $this->ReadPropertyFloat("BorderValue")) {
 				SetValue($this->GetIDForIdent("Status"), 1);
 				$this->SetTimerInterval("CheckIfDoneTimer", 0);
