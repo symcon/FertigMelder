@@ -25,8 +25,8 @@ Dazu wird die Variable der Leistungsaufnahme des Geräts ausgewählt und ein Gre
 
 ### 3. Software-Installation
 
-* Über den Modul Store das Modul Fertig-Melder installieren.
-* Alternativ über das Modul Control folgende URL hinzufügen:
+* Über den Module Store das Modul Fertig-Melder installieren.
+* Alternativ über das Module Control folgende URL hinzufügen:
 `https://github.com/symcon/FertigMelder`  
 
 ### 4. Einrichten der Instanzen in IP-Symcon
