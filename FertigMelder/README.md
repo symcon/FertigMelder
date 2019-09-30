@@ -2,7 +2,7 @@
 Der FertigMelder meldet ob ein Gerät fertig ist.
 Dazu wird die Variable der Leistungsaufnahme des Geräts ausgewählt und ein Grenzwert festgelegt. Sobald dieser Grenzwert erstmalig überschritten wird, wird der FertigMelder gestartet. Wird dieser Grenzwert unterschritten und in einer einstellbaren Zeitspanne nicht wieder überschritten, wird die Statusvariable auf "Fertig" gesetzt. 
 
-### Inhaltverzeichnis
+### Inhaltsverzeichnis
 
 1. [Funktionsumfang](#1-funktionsumfang)
 2. [Voraussetzungen](#2-voraussetzungen)
@@ -21,17 +21,17 @@ Dazu wird die Variable der Leistungsaufnahme des Geräts ausgewählt und ein Gre
 
 ### 2. Voraussetzungen
 
-- IP-Symcon ab Version 4.x
+- IP-Symcon ab Version 4.2
 
 ### 3. Software-Installation
 
-* Über den Modul Store das Modul Fertig-Melder installieren.
-* Alternativ über das Modul Control folgende URL hinzufügen:
-´https://github.com/symcon/FertigMelder`  
+* Über den Module Store das Modul Fertig-Melder installieren.
+* Alternativ über das Module Control folgende URL hinzufügen:
+`https://github.com/symcon/FertigMelder`  
 
 ### 4. Einrichten der Instanzen in IP-Symcon
 
-- Unter "Instanz hinzufügen" ist das 'Fertigmelder'-Modul unter dem Hersteller '(Sonstige)' aufgeführt.  
+- Unter "Instanz hinzufügen" ist das 'Fertigmelder'-Modul unter dem Hersteller '(Gerät)' aufgeführt.  
 
 __Konfigurationsseite__:
 
@@ -51,7 +51,7 @@ Die Statusvariablen/Kategorien werden automatisch angelegt. Das Löschen einzeln
 Name   | Typ     | Beschreibung
 ------ | ------- | ----------------
 Active | boolean | Schaltet das Modul Ein/Aus
-Status | integer | Spiegelt die Status Aus/Läuft/Fertig wieder
+Status | integer | Zeigt den Status an (Aus/Läuft/Fertig)
 
 ##### Profile:
 
