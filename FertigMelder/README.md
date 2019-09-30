@@ -51,7 +51,7 @@ Die Statusvariablen/Kategorien werden automatisch angelegt. Das Löschen einzeln
 Name   | Typ     | Beschreibung
 ------ | ------- | ----------------
 Active | boolean | Schaltet das Modul Ein/Aus
-Status | integer | Spiegelt die Status Aus/Läuft/Fertig wider
+Status | integer | Zeigt den Status an (Aus/Läuft/Fertig)
 
 ##### Profile:
 
