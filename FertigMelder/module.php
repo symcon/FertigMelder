@@ -52,6 +52,14 @@ class FertigMelder extends IPSModule
         }
 
         $this->RegisterMessage($this->ReadPropertyInteger('SourceID'), VM_UPDATE);
+
+        //Add references
+        foreach ($this->GetReferenceList() as $referenceID) {
+            $this->UnregisterReference($referenceID);
+        }
+        if ($this->ReadPropertyInteger('SourceID') != 0) {
+            $this->RegisterReference($this->ReadPropertyInteger('SourceID'));
+        }
     }
 
     public function SetActive(bool $Active)
