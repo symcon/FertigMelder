@@ -31,7 +31,7 @@ Dazu wird die Variable der Leistungsaufnahme des Geräts ausgewählt und ein Gre
 
 ### 4. Einrichten der Instanzen in IP-Symcon
 
-- Unter "Instanz hinzufügen" ist das 'Fertigmelder'-Modul unter dem Hersteller '(Gerät)' aufgeführt.  
+- Unter "Instanz hinzufügen" ist kann 'Fertigmelder'-Modul mithilfe der Schnellsuche gefunden werden.  
 
 __Konfigurationsseite__:
 
