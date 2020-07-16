@@ -9,7 +9,9 @@
 			"Seconds": "Sekunden",
 			"Off": "Aus",
 			"Running": "Läuft",
-			"Done": "Fertig"
+			"Done": "Fertig",
+			"Active": "Aktiv",
+			"Status": "Status"
 		}
 	}
 }
