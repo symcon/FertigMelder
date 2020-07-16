@@ -18,7 +18,6 @@ class FertigMelder extends IPSModule
 
         if (!IPS_VariableProfileExists('FM.Status')) {
             IPS_CreateVariableProfile('FM.Status', 1);
-            IPS_SetVariableProfileValues('FM.Status', 0, 2, 1);
             IPS_SetVariableProfileAssociation('FM.Status', 0, $this->Translate('Off'), 'Sleep', -1);
             IPS_SetVariableProfileAssociation('FM.Status', 1, $this->Translate('Running'), 'Motion', -1);
             IPS_SetVariableProfileAssociation('FM.Status', 2, $this->Translate('Done'), 'Ok', -1);
@@ -26,6 +25,8 @@ class FertigMelder extends IPSModule
 
         $this->RegisterVariableInteger('Status', 'Status', 'FM.Status');
         $this->RegisterVariableBoolean('Active', 'Active', '~Switch');
+        IPS_SetVariableProfileValues('FM.Status', 0, 0, 0);
+
         $this->EnableAction('Active');
     }
 
