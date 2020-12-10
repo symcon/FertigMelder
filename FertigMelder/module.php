@@ -53,6 +53,13 @@ class FertigMelder extends IPSModule
             IPS_DeleteEvent($eventID);
         }
 
+        //Unregister all messages in order to readd them
+        foreach ($this->GetMessageList() as $senderID => $messages) {
+            foreach ($messages as $message) {
+                $this->UnregisterMessage($senderID, $message);
+            }
+        }
+
         $this->RegisterMessage($this->ReadPropertyInteger('SourceID'), VM_UPDATE);
 
         //Add references
