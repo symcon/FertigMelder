@@ -7,5 +7,9 @@
 	{ "type": "NumberSpinner", "name": "BorderValue", "caption": "Bordervalue", "digits": 2},
 	{ "type": "Label", "label": "Elapsing-Time til 'Done'-Message" },
 	{ "type": "IntervalBox", "name": "Period", "caption": "Seconds" }
+  ],
+  "actions":
+  [
+	{ "type": "TestCenter" }
   ]
 }
