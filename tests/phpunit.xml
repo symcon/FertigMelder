@@ -6,7 +6,7 @@
   </php>
   <source>
     <include>
-      <directory suffix=".php">../FertigMelder</directory>
+      <directory suffix=".php">../DoneNotifier</directory>
     </include>
   </source>
 </phpunit>

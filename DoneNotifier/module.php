@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-class FertigMelder extends IPSModule
+class DoneNotifier extends IPSModule
 {
     public function Create()
     {
