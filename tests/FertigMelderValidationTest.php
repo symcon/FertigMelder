@@ -8,8 +8,8 @@ class FertigMelderValidationTest extends TestCaseSymconValidation
     {
         $this->validateLibrary(__DIR__ . '/..');
     }
-    public function testValidateFertigMelderModule(): void
+    public function testValidateDoneNotifierModule(): void
     {
-        $this->validateModule(__DIR__ . '/../FertigMelder');
+        $this->validateModule(__DIR__ . '/../DoneNotifier');
     }
 }

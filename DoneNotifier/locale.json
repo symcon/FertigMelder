@@ -11,7 +11,9 @@
             "Running": "Läuft",
             "Done": "Fertig",
             "Active": "Aktiv",
-            "Status": "Status"
+            "Status": "Status",
+            "Done Notifier": "FertigMelder",
+            "https://www.symcon.de/en/service/documentation/module-reference/done-notifier/": "https://www.symcon.de/de/service/dokumentation/modulreferenz/fertigmelder/"
         }
     }
 }

@@ -1,14 +1,14 @@
 {
     "id": "{AB3467A7-CD43-442D-95FD-BCDBCF8D9A67}",
-    "name": "FertigMelder",
+    "name": "Done Notifier",
     "type": 3,
     "vendor": "",
     "aliases": [
-        "FertigMelder"
+        "Done Notifier"
     ],
     "parentRequirements": [],
     "childRequirements": [],
     "implemented": [],
     "prefix": "FM",
-    "url": "https://github.com/symcon/FertigMelder/tree/master/FertigMelder"
+    "url": "https://www.symcon.de/en/service/documentation/module-reference/done-notifier/"
 }
