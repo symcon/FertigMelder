@@ -6,5 +6,5 @@
 
 Folgende Module beinhaltet das FertigMelder Repository:
 
-- __Fertig-Melder__ ([Dokumentation](https://www.symcon.de/de/service/dokumentation/modulreferenz/fertigmelder))  
+- __Fertig-Melder__ ([Dokumentation](https://www.symcon.de/de/service/dokumentation/modulreferenz/fertigmelder/))  
 	Meldet nach einer Totzeit, nachdem ein Gerät einen gewissen Verbrauch unterschritten hat.
